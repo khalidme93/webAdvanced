@@ -11,14 +11,16 @@ router.get("/sign-in", function(request, response){
 })
 
 router.get("/update-profile", function(request, response){
-	const isLoggedIn = true
-	response.render("update-profile.hbs", {isLoggedIn: isLoggedIn})
+	response.render("update-profile.hbs")
 })
 
 router.post("/update-profile",function(req,res){
 	const username = req.body.name
 	const email = req.body.email
 	const account = req.session.account
+
+	if(!account)
+		res.redirect("/sign-in")
 
 	accountManager.updateAccountInformation(username,email,account,function(errors){
 		if(errors.length > 0){
@@ -91,6 +93,19 @@ router.get('/profile', function(req, res){
 router.post('/signout', function (request, response) {
 	request.session.isLoggedIn = false
 	response.redirect("/")
+})
+
+router.post("/user/delete", function(req, res)   {
+	const account = req.session.account
+
+	accountManager.deleteUser(account, function(errors)   {
+		if(errors.length > 0)
+			res.render("update-profile.hbs", {errors: errors})
+		else    {
+			req.session.account = null
+			res.redirect("/")
+		}
+	})
 })
 
 module.exports = router

@@ -2,7 +2,6 @@
     {{#if error}}
         <p>{{this.error}}</p>
     {{/if}}
-    {{#if isLoggedIn}}
         <form action="/accounts/update-profile" method="POST">
 
                 <div>
@@ -20,5 +19,4 @@
                     <br>
                 </div>
             </form>
-    {{/if}}        
 </div>

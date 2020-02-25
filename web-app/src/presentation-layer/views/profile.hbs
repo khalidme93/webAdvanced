@@ -19,8 +19,12 @@
           <strong>email: </strong><strong>{{user.email}}</strong> 
         </p>
         <a class="button is-primary is-active" href="/accounts/update-profile" target="_blank">
-		<span>Edit Profile</span>
-		</a>
+		      <span>Edit Profile</span>
+		    </a>
+
+        <form action="/accounts/user/delete" method="POST" id="deleteAccountForm">
+        <input type="submit" value="delete account!" class="button is-danger" id="deleteAccount">
+        </form>
       </div>
     </div>
   </article>

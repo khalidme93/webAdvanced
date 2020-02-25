@@ -62,25 +62,24 @@ exports.updateAccountInformation = function(username, email, account, callback){
     
     if(username == "")
         errors.push("Must enter a username.")
-    if(username.length < 6)
+    else if(username.length < 6)
         errors.push("username is to short!")
-    if(email == ""){
+    else if(email == "")
         errors.push("Must enter a email.")
-    if(!email.includes("@") || !email.includes("."))
+    else if(!email.includes("@") || !email.includes("."))
         errors.push("enter a valid Email")
 
     if(errors.length > 0)   {
         callback(errors)
     }   else    {
         accountRepository.updateAccountInformation(accountId, username, email, function(error){
-            if(error){
+            if(error)
                 errors.push(error)
-                callback(errors)
-            }   else
-                callback(null)
+                
+            callback(errors)
         })
     }
-}
+
 }
 
 exports.deleteUser = function(account, callback)   {
