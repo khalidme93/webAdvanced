@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web-app:
+    build: web-app
+    ports:
+      - "8080:8080"
+      - "9229:9229"
+    volumes:
+      - "./web-app/src:/web-application/src"
+    depends_on:
+      - redis 
+      - "db"
+  db:
+    build: db
+    ports: 
+      - "3306:3306"
+    environment: 
+      - "MYSQL_ROOT_PASSWORD=abc123"
+      - "MYSQL_DATABASE=myDB"
+  redis:
+    build: ./redis
+    ports:
+      - "6379:6379"
+    hostname: redis

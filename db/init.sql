@@ -1,0 +1,19 @@
+-- Create a table to store user accounts in.
+CREATE TABLE IF NOT EXISTS accounts (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(50) NOT NULL,
+	email VARCHAR(40) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL,
+	profileImagePath VARCHAR(255) DEFAULT "profile.png",
+	CONSTRAINT usernameUnique UNIQUE (username)
+);
+
+/**CREATING TABLE FOR POSTS**/
+CREATE TABLE IF NOT EXISTS post (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	ownerId INT UNSIGNED,
+	content VARCHAR(255),
+	timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+	likes INT UNSIGNED DEFAULT 0,
+	CONSTRAINT fkPostToUser FOREIGN KEY (ownerId) REFERENCES accounts(id)
+);

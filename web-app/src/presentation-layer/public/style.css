@@ -1,0 +1,56 @@
+html {
+    scroll-behavior: smooth;
+  }
+  body{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-family:"helvetica","Roboto",sans-serif;
+      font-size:14px;
+      line-height:1.5;
+      background-color:#f0f0f0
+  }
+  .main_hero {
+      background-image: url("/images/coder.jpg");
+      background-size: cover;
+  }
+  a{
+      text-decoration:none
+  }
+  
+  img{
+      max-width:100%
+  }
+  a.is-primary{
+      background-color:#03b2e3 !important;
+      border:1px solid #03b2e3 !important
+  }
+  a.is-primary:hover{
+      background-color:transparent !important;
+      color:#000 !important
+  }
+  a.button{
+      font-size:14px
+  }
+  .main_title{
+      color:#fff;
+  }
+
+  .has-text-purple {
+      color: #8600B1 !important;
+  }
+ 
+  footer{
+      background-color:#344157;
+      border-top:3px solid #03b2e3;
+      color:#fff !important
+  }
+  .footer_title{
+      color:#fff !important
+  }
+  .ed-footer-sections{
+      width:90%;
+      margin:0 auto;
+      display:flex;
+      align-items:flex-start;
+      flex-wrap:wrap
+  }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" integrity="sha256-D9M5yrVDqFlla7nlELDaYZIpXfFWDytQtiV+TaH6F1I=" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<script defer src="style.js"></script>  
+	<title>JU coders</title>
+</head>
+<body>
+    <section class="hero main_hero is-fullheight">
+		<div class="hero-head">
+			<div class="first_nav">
+				<div class="container">
+					<nav class="navbar">
+						<div class="navbar-brand">
+							<!-- Brand Logo -->
+							<a class="navbar-item" href="http://aldi.github.io/awesome-bulma-templates">
+								<img src="images/logo.png" alt="Ju Coders" width="112" height="112">
+							</a>
+							<!-- Mobile Menu -->
+							<div class="navbar-burger burger" data-target="navMenuBlogHero">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+						<!-- Menu -->
+						<div id="navMenuBlogHero" class="navbar-menu">
+							<!-- Left Nav -->
+							<div class="navbar-start">
+								<a class="navbar-item has-text-purple" href="/accounts/profile">PROFILE</a>
+								<a class="navbar-item has-text-purple" href="#accounts-list-all">FRIENDS</a>
+								<a class="navbar-item has-text-purple" href="#message">MESSAGE</a>
+								<a class="navbar-item has-text-purple" href="#contact-us">Contact Us</a>
+							</div>
+							<!-- ./Left Nav -->
+							<!-- Right Nav -->
+							<div class="navbar-end">
+								<div class="navbar-item">
+									{{#if isLoggedIn}}
+              							<form action="/signout" method="post">
+                  						<input type="submit" class="button is-primary" value="logout" />
+                						</form>
+                					{{/if}}
+									<div class="field is-grouped">
+										<p class="control">
+											<a class="button is-primary is-active" href="/accounts/sign-in" target="_blank">
+												<span>LOG IN</span>
+											</a>
+										</p>
+										<p class="control">
+											<a class="button is-success" href="/accounts/sign-up" target="_blank">
+												<span>SIGN UP</span>
+											</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	
+	{{{body}}}
+
+
+    <footer class="hero">
+		<div class="hero-body">
+			<div class="container">
+				<div class="columns">
+					<div class="column is-4" style="text-align: center;">
+						<div class="content">
+							<div>
+								<h6 class="footer_title title is-6">SOCIAL MEDIA</h6>
+								<p>our platform</p>
+
+								<button class="facebook-button button is-medium"><i class="fab fa-facebook-f"></i></button>
+								<button class="twitter-button button is-medium"><i class="fab fa-twitter"></i></button>
+								<button class="google-button button is-medium"><i class="fab fa-google-plus-g"></i></button>
+								<button class="linkedin-button button is-medium"><i class="fab fa-linkedin-in"></i></button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+	
+</body>
+</html>

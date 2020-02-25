@@ -1,0 +1,28 @@
+{{#if error}}
+    <p>{{this}}</p>
+{{/if}}
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+         {{#if user.profileImagePath}}
+                    <img class="is-rounded profileImage" style="width: 64x64" src="/images/{{user.profileImagePath}}">
+                {{else}}
+                    <img class="is-rounded" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                {{/if}}
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>username: </strong><strong>{{user.username}}</strong> <br> 
+          <strong>email: </strong><strong>{{user.email}}</strong> 
+        </p>
+        <a class="button is-primary is-active" href="/accounts/update-profile" target="_blank">
+		<span>Edit Profile</span>
+		</a>
+      </div>
+    </div>
+  </article>
+</div>
+

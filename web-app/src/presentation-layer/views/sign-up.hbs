@@ -1,0 +1,31 @@
+<div id="sign-up">
+    <div class="bannerBox column is-half is-offset-one-quarter">
+        <h1 class="title is-1 bannerText" ><b>SIGN UP</b></h1>
+    </div>
+    <div class="box signInBox column is-half is-offset-one-quarter">
+        <form id="signUpForm" action="/accounts/sign-up" method="POST">
+            <div id="signupErrorsField" class="errorText">
+                {{#each errors}}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+            <div style="max-width:200px; margin: auto;">
+                <label class="label">Username</label>
+                <input class="input field" type="text" name="username" placeholder="username">
+                <p class="pClassOfInputs"></p>
+
+                <label class="label">email</label>
+                <input class="input field" type="email" name="email" placeholder="email" style="margin-bottom:12px;" required>
+                <p class="pClassOfInputs"></p>
+
+                <label class="label">Password</label>
+                <input class="input field" type="password" name="password" placeholder="password">
+                <p class="pClassOfInputs"></p>
+
+                <input class="button is-primary is-medium is-fullwidth" type="submit" value="Create account" style="margin-bottom:10px;">
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+<br>

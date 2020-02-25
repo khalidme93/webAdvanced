@@ -1,0 +1,24 @@
+<div class="box">
+    {{#if error}}
+        <p>{{this.error}}</p>
+    {{/if}}
+    {{#if isLoggedIn}}
+        <form action="/accounts/update-profile" method="POST">
+
+                <div>
+                    <p>username</p>
+                    <input type="text" name="name">{{username}} </input>
+                </div>
+                <div>
+                    <p>email:</p>
+                    <input type="text" name="email">{{email}}  </input>
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="save" id="saveCustomize" class="button is-primary">
+                    <br>
+                    <br>
+                </div>
+            </form>
+    {{/if}}        
+</div>
